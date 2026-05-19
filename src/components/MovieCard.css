@@ -4,6 +4,7 @@
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 .movie-card img:hover {
@@ -51,4 +52,10 @@
         padding: 0 10px;
         margin-bottom: 10px;
     }
+}
+
+/* Card */
+
+.movie-card {
+  position: relative;
 }

@@ -46,9 +46,8 @@ const HeroBanner = () => {
         slidesPerView={"auto"}
         loop={true}
         speed={1000}        
-  centeredSlides= {true}
-  centeredSlidesBounds= {true}
-
+        centeredSlides= {true}
+        centeredSlidesBounds= {true}
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
@@ -60,9 +59,9 @@ const HeroBanner = () => {
           rotate: 0,
           stretch: 0,
           depth: 250,
-          modifier: 2,
-          slideShadows: false,
-          scale: 0.85,
+          modifier: 4,
+          slideShadows: true,
+          scale: 1,
         }}
         className="hero-swiper"
       >
