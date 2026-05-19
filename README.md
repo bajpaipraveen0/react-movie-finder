@@ -1,16 +1,176 @@
-# React + Vite
+# 🎬 Movie Discovery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based Movie Discovery Application built using TMDB API.  
+Users can explore trending movies, search films, view detailed movie information, and save favorites to a personal watchlist.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 🚀 Features
 
-## React Compiler
+## 🏠 Home Page
+- Cinematic Hero Banner
+- 3D Swiper Slider
+- Trending Movies
+- Popular Movies
+- Top Rated Movies
+- Upcoming Movies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🔍 Search Movies
+- Live movie search
+- Debounced API calls
+- Empty state UI
+- Responsive search layout
 
-## Expanding the ESLint configuration
+## 🎥 Movie Details
+- Full movie information
+- Backdrop banner
+- Genres
+- Ratings
+- Runtime
+- Production companies
+- Languages
+- IMDb redirect
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ❤️ Watchlist
+- Add/remove movies
+- Heart icon interaction
+- LocalStorage persistence
+- Watchlist page
+
+## 📱 Responsive Design
+- Mobile friendly
+- Tablet support
+- Desktop optimized
+
+---
+
+# 🛠️ Tech Stack
+
+- React JS
+- React Router DOM
+- Swiper JS
+- Axios
+- TMDB API
+- React Icons
+- CSS3
+
+---
+
+# 📂 Project Structure
+
+```bash
+src/
+│
+├── assets/
+├── components/
+│   ├── Footer
+│   ├── HeroBanner
+│   ├── MovieCard
+│   ├── MultiSlider
+│   └── Navbar
+│
+├── pages/
+│   ├── Home
+│   ├── MovieDetails
+│   ├── Search
+│   └── Watchlist
+│
+├── routes/
+├── services/
+├── utils/
+└── App.jsx
+```
+
+---
+
+# ⚙️ Installation
+
+## 1 Clone Repository
+
+```bash
+git clone <your-repository-url>
+```
+
+## 2 Navigate to Project
+
+```bash
+cd movie-discovery-app
+```
+
+## 3 Install Dependencies
+
+```bash
+npm install
+```
+
+## 4 Create Environment File
+
+Create `.env` file in root directory.
+
+```env
+VITE_TMDB_API_KEY=your_tmdb_api_key
+```
+
+## 5 Start Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+# 🔑 TMDB API
+
+This project uses TMDB API.
+
+Get your API key from:
+
+https://www.themoviedb.org/settings/api
+
+---
+
+# 📸 Screenshots
+
+## Home Page
+- Hero Banner
+- Movie Sliders
+- Responsive Layout
+
+## Search Page
+- Live Search
+- Dynamic Results
+
+## Movie Details
+- Fullscreen Banner
+- Movie Information
+
+## Watchlist
+- Favorite Movies
+- Persistent Storage
+
+---
+
+# 🌟 Future Improvements
+
+- Context API for Watchlist
+- Authentication
+- Trailer Integration
+- Infinite Scrolling
+- Skeleton Loaders
+- Dark/Light Theme
+- Genre Filtering
+- Pagination
+- Firebase Backend
+
+---
+
+# 📄 License
+
+This project is for learning and portfolio purposes.
+
+---
+
+# 👨‍💻 Author
+
+Developed with React JS and TMDB API.
+```
