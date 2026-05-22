@@ -43,10 +43,11 @@ const HeroBanner = () => {
         ]}
         effect="coverflow"
         centeredSlides={true}
-        slidesPerView={"auto"}
-        loop={true}
+        slidesPerView={1.4}
+        loop={movies.length > 2}
+        loopAdditionalSlides={movies.length}
+        watchSlidesProgress={true}
         speed={1000}        
-        centeredSlides= {true}
         centeredSlidesBounds= {true}
         autoplay={{
           delay: 4000,

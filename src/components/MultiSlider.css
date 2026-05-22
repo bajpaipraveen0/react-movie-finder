@@ -9,3 +9,87 @@
     font-weight: 600;
     margin-bottom: 1rem;
 }
+
+.slider-section .swiper {
+  padding: 10px 10px 50px;
+
+  overflow: visible;
+}
+
+/* =========================
+   Slider Top
+========================= */
+
+.slider-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.slider-title {
+  font-size: 32px;
+
+  color: white;
+}
+
+/* Navigation */
+
+.slider-navigation {
+  display: flex;
+
+  gap: 12px;
+}
+
+/* Buttons */
+
+.slider-navigation button {
+  width: 45px;
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(15, 23, 42, 0.7);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 16px;
+}
+
+.slider-navigation button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #facc15,
+      #f59e0b
+    );
+
+  color: black;
+
+  transform: scale(1.1);
+}
+
+/* Hide Default Swiper Buttons */
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}

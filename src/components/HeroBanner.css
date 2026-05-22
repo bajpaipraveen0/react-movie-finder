@@ -8,6 +8,7 @@
 
 .hero-swiper {
   width: 100%;
+   overflow: visible !important;
 }
 
 /* Slides */
@@ -33,6 +34,9 @@
 
   display: flex;
   align-items: flex-end;
+  border-radius: 30px;
+
+  overflow: hidden;
 }
 
 /* Overlay */

@@ -30,6 +30,19 @@ export const fetchMovieDetails = async (id) => {
   }
 };
 
+export const fetchMovieCredits = async (id) => {
+  const response = await axios.get(
+    `${BASE_URL}/movie/${id}/credits`,
+    {
+      params: {
+        api_key: API_KEY,
+      },
+    }
+  );
+
+  return response.data.cast;
+};
+
 export const fetchPopularMovies = async () => {
   try {
     const response = await axios.get(
@@ -67,4 +80,17 @@ export const fetchUpcomingMovies = async () => {
     console.error(error);
     return [];
   }
+};
+
+export const fetchSimilarMovies = async (id) => {
+  const response = await axios.get(
+    `${BASE_URL}/movie/${id}/similar`,
+    {
+      params: {
+        api_key: API_KEY,
+      },
+    }
+  );
+
+  return response.data.results;
 };

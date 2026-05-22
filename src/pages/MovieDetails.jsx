@@ -1,21 +1,41 @@
 import { useEffect, useState } from "react";
 
-import { fetchMovieDetails } from "../services/homeApi";
+import {
+  fetchMovieDetails,
+  fetchMovieCredits,
+  fetchSimilarMovies
+} from "../services/homeApi";
 import { useParams } from "react-router-dom";
 import "./MovieDetails.css";
+import MultiSlider from "../components/MultiSlider";
 
 const MovieDetails = () => {
   const { id } = useParams();
 
   const [movie, setMovie] = useState(null);
+  const [casts, setCasts] = useState([]);
+  const [similarMovies, setSimilarMovies] = useState([]);
+
+  const [showCastPopup, setShowCastPopup] =
+    useState(false);
 
   useEffect(() => {
     const getMovie = async () => {
-      const data = await fetchMovieDetails(id);
 
-      console.log(data);
+      const movieData =
+        await fetchMovieDetails(id);
 
-      setMovie(data);
+      const castData =
+        await fetchMovieCredits(id);
+
+      const similarData =
+        await fetchSimilarMovies(id);
+
+      setMovie(movieData);
+
+      setCasts(castData);
+
+      setSimilarMovies(similarData);
     };
 
     getMovie();
@@ -25,8 +45,8 @@ const MovieDetails = () => {
     return <h1>Loading...</h1>;
   }
 
-    return (
-                <div className="movie-details">
+  return (
+    <div className="movie-details">
 
       {/* Backdrop Banner */}
       <div
@@ -105,6 +125,66 @@ const MovieDetails = () => {
 
           </div>
 
+          {/* Cast Section */}
+
+          <div className="movie-section">
+
+            <div className="cast-header">
+
+              <h3>
+                Top Cast
+              </h3>
+
+              <button
+                className="view-all-btn"
+                onClick={() =>
+                  setShowCastPopup(true)
+                }
+              >
+                View All
+              </button>
+
+            </div>
+
+            <div className="cast-grid">
+
+              {casts
+                .slice(0, 5)
+                .map((actor) => (
+
+                  <div
+                    className="cast-card"
+                    key={actor.id}
+                  >
+
+                    <img
+                      src={
+                        actor.profile_path
+                          ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
+                          : "https://via.placeholder.com/300x450?text=No+Image"
+                      }
+                      alt={actor.name}
+                    />
+
+                    <div className="cast-info">
+
+                      <h4>
+                        {actor.name}
+                      </h4>
+
+                      <p>
+                        {actor.character}
+                      </p>
+
+                    </div>
+
+                  </div>
+                ))}
+
+            </div>
+
+          </div>
+
           {/* Languages */}
           <div className="movie-section">
             <h3>Languages</h3>
@@ -151,8 +231,79 @@ const MovieDetails = () => {
 
         </div>
       </div>
+
+      <div className="homeContainer">
+        <MultiSlider
+        title="You May Also Like"
+        movies={similarMovies}
+      />
+      </div>
+
+      {/* Cast Popup */}
+
+      {showCastPopup && (
+
+        <div className="cast-modal-overlay">
+
+          <div className="cast-modal">
+
+            <div className="cast-modal-header">
+
+              <h2>
+                Full Cast
+              </h2>
+
+              <button
+                onClick={() =>
+                  setShowCastPopup(false)
+                }
+              >
+                ✕
+              </button>
+
+            </div>
+
+            <div className="cast-modal-grid">
+
+              {casts.map((actor) => (
+
+                <div
+                  className="cast-card"
+                  key={actor.id}
+                >
+
+                  <img
+                    src={
+                      actor.profile_path
+                        ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
+                        : "https://via.placeholder.com/300x450?text=No+Image"
+                    }
+                    alt={actor.name}
+                  />
+
+                  <div className="cast-info">
+
+                    <h4>
+                      {actor.name}
+                    </h4>
+
+                    <p>
+                      {actor.character}
+                    </p>
+
+                  </div>
+
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+
+        </div>
+      )}
     </div>
-        )
-    }
+  )
+}
 
 export default MovieDetails

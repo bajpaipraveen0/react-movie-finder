@@ -197,6 +197,212 @@
   transform: translateY(-3px);
 }
 
+/* =========================
+   Cast Section
+========================= */
+
+.cast-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.cast-header h3 {
+  font-size: 28px;
+}
+
+/* View Button */
+
+.view-all-btn {
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #facc15,
+      #f59e0b
+    );
+
+  color: black;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.view-all-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Grid */
+
+.cast-grid,
+.cast-modal-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(125px, 1fr));
+
+  gap: 24px;
+}
+
+/* Card */
+
+.cast-card {
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    rgba(15, 23, 42, 0.7);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(14px);
+
+  transition: 0.3s ease;
+}
+
+.cast-card:hover {
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.4);
+}
+
+.cast-card img {
+  width: 100%;
+
+  height: 180px;
+
+  object-fit: cover;
+}
+
+.cast-info {
+  padding: 18px;
+}
+
+.cast-info h4 {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.cast-info p {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+/* =========================
+   Modal
+========================= */
+
+.cast-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(0,0,0,0.8);
+
+  backdrop-filter: blur(12px);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 9999;
+
+  padding: 20px;
+}
+
+.cast-modal {
+  width: 75%;
+
+  max-width: 1000px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background-color: #020617;
+
+  border-radius: 30px;
+
+  padding: 40px;
+}
+
+.cast-modal-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.cast-modal-header h2 {
+  font-size: 38px;
+}
+
+.cast-modal-header button {
+  border: none;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+/* Responsive Modal */
+
+@media (max-width: 768px) {
+  .cast-grid,
+  .cast-modal-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .cast-card img {
+    height: 220px;
+  }
+
+  .cast-header h3 {
+    font-size: 22px;
+  }
+
+  .cast-modal {
+    padding: 24px;
+  }
+
+  .cast-modal-header h2 {
+    font-size: 28px;
+  }
+}
+
 /* Responsive */
 
 @media (max-width: 900px) {
