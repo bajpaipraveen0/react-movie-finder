@@ -1,7 +1,7 @@
 import './App.css'
-import Footer from './components/Footer.jsx'
-import Navbar from './components/Navbar.jsx'
-import AppRoutes from './routes/AppRoutes.jsx'
+import Footer from './components/Footer'
+import Navbar from './components/NavBar'
+import AppRoutes from './routes/AppRoutes'
 
 function App() {
 
