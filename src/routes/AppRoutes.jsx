@@ -4,6 +4,8 @@ import WatchList from "../pages/WatchList";
 import About from "../pages/About";
 import Search from "../pages/Search";
 import MovieDetails from "../pages/MovieDetails";
+import NotFound from "../components/NotFound";
+import CategoryMovies from "../pages/CategoryMovies";
 
 const AppRoutes = () => {
   return (
@@ -13,7 +15,8 @@ const AppRoutes = () => {
       <Route path="/search" element={<Search />} />
       <Route path="/watchlist" element={<WatchList />} />
       <Route path="/about" element={<About />} />
-      {/* <Route path="*" element={<NotFound />} /> */}
+      <Route path="/movies/:category" element={<CategoryMovies />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

@@ -1,0 +1,143 @@
+.category-page {
+  padding: 120px 0 60px;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.category-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    margin-bottom: 40px;
+}
+
+.category-header h1 {
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #facc15,
+    #f97316
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 40px rgba(250, 204, 21, 0.4);
+
+  text-transform: capitalize;
+}
+
+.category-header span {
+  color: #94a3b8;
+
+  font-size: 15px;
+}
+
+.movies-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(220px, 1fr)
+    );
+
+  gap: 30px;
+}
+
+.loading {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+}
+
+@media (max-width: 768px) {
+
+  .category-header {
+    flex-direction: column;
+
+    gap: 10px;
+
+    align-items: flex-start;
+  }
+
+  .category-header h1 {
+    font-size: 30px;
+  }
+
+}
+
+.pagination {
+  margin-top: 60px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: white;
+
+  font-size: 15px;
+
+  transition: all .3s ease;
+}
+
+.pagination button:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(255,255,255,0.15);
+}
+
+.pagination button.active {
+  background:
+    linear-gradient(
+      135deg,
+      #facc15,
+      #f97316
+    );
+
+  color: black;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 25px
+    rgba(249,115,22,.35);
+}
+
+.pagination button:disabled {
+  opacity: .4;
+
+  cursor: not-allowed;
+}

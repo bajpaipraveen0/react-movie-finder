@@ -1,45 +1,52 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   addToWatchlist,
   removeFromWatchlist,
   isInWatchlist,
 } from "../utils/watchlist";
-import "./MovieCard.css";
+
 import {
   FaHeart,
   FaRegHeart,
 } from "react-icons/fa";
 
+import "./MovieCard.css";
 
 const MovieCard = ({ movie }) => {
-  const saved =
-    isInWatchlist(movie.id);
+
+  const [saved, setSaved] = useState(
+    isInWatchlist(movie.id)
+  );
+
+  const handleWatchlist = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (saved) {
+      removeFromWatchlist(movie.id);
+    } else {
+      addToWatchlist(movie);
+    }
+
+    setSaved(!saved);
+  };
+
   return (
     <Link to={`/movie/${movie.id}`}>
       <div className="movie-card">
 
-        <div
+        <button
           className="watchlist-icon"
-          onClick={(e) => {
-            e.stopPropagation();
-
-            if (saved) {
-              removeFromWatchlist(movie.id);
-            } else {
-              addToWatchlist(movie);
-            }
-
-            window.location.reload();
-          }}
+          onClick={handleWatchlist}
         >
           {saved ? (
             <FaHeart />
           ) : (
             <FaRegHeart />
           )}
-        </div>
+        </button>
 
-        {/* Movie Poster */}
         <img
           src={
             movie.poster_path
@@ -50,18 +57,22 @@ const MovieCard = ({ movie }) => {
           className="movie-poster"
         />
 
-
-        {/* Movie Details */}
-        <div className="p-4 movie-content">
+        <div className="movie-content">
           <h2 className="movie-title">
             {movie.title}
           </h2>
 
           <div className="movie-info">
-            <p>⭐ {movie.vote_average?.toFixed(1)}</p>
-            <span>{movie.release_date}</span>
+            <p>
+              ⭐ {movie.vote_average?.toFixed(1)}
+            </p>
+
+            <span>
+              {movie.release_date}
+            </span>
           </div>
         </div>
+
       </div>
     </Link>
   );

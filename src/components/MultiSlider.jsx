@@ -19,10 +19,12 @@ import "./MultiSlider.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 
 const MultiSlider = ({
   title,
   movies = [],
+  category,
 }) => {
 
   const sliderId =
@@ -38,6 +40,13 @@ const MultiSlider = ({
         </h2>
 
         <div className="slider-navigation">
+
+          <Link
+            to={`/movies/${category}`}
+            className="see-all-btn"
+          >
+            See All
+          </Link>
 
           <button
             className={`slider-prev-${sliderId}`}

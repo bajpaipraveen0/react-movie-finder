@@ -1,0 +1,191 @@
+.not-found {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #0f172a,
+      #1e293b
+    );
+
+  padding: 20px;
+}
+
+/* Content */
+
+.not-found-content {
+  position: relative;
+
+  z-index: 10;
+
+  text-align: center;
+
+  max-width: 700px;
+}
+
+/* Badge */
+
+.error-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 20px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  color: #facc15;
+
+  margin-bottom: 30px;
+}
+
+/* 404 */
+
+.not-found h1 {
+  font-size: 180px;
+
+  line-height: 1;
+
+  margin: 0;
+
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #facc15,
+      #f97316
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 40px rgba(250,204,21,.4);
+}
+
+.not-found h2 {
+  font-size: 42px;
+
+  color: white;
+
+  margin-bottom: 20px;
+}
+
+.not-found p {
+  color: #94a3b8;
+
+  line-height: 1.8;
+
+  font-size: 18px;
+
+  margin-bottom: 40px;
+}
+
+/* Button */
+
+.home-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 16px 32px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  color: black;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      135deg,
+      #facc15,
+      #f59e0b
+    );
+
+  transition: .3s ease;
+}
+
+.home-btn:hover {
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  box-shadow:
+    0 15px 40px
+    rgba(250,204,21,.35);
+}
+
+/* Glows */
+
+.glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: .3;
+}
+
+.glow-1 {
+  width: 400px;
+  height: 400px;
+
+  background: #facc15;
+
+  top: -100px;
+  left: -100px;
+}
+
+.glow-2 {
+  width: 400px;
+  height: 400px;
+
+  background: #3b82f6;
+
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .not-found h1 {
+    font-size: 120px;
+  }
+
+  .not-found h2 {
+    font-size: 28px;
+  }
+
+  .not-found p {
+    font-size: 16px;
+  }
+
+}
